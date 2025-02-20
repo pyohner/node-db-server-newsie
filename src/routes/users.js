@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Get all users
 router.get("/", (req, res) => {
-    db.all("SELECT id, username, email FROM users", [], (err, rows) => {
+    db.all("SELECT id, username, password, email FROM users", [], (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
             return;
@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
             res.status(500).json({ error: err.message });
             return;
         }
-        res.json({ id: this.lastID, username, email });
+        res.json({ id: this.lastID, username, password, email });
     });
 });
 
