@@ -3,7 +3,7 @@ const cors = require("cors");
 const db = require("./db");
 
 const app = express();
-const PORT = 3333; // You can change this if needed
+const PORT = 3333;
 
 
 // Middleware

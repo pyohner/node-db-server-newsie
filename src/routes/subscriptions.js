@@ -8,12 +8,6 @@ router.get("/", (req, res) => {
     const query = `
         SELECT userId, newsletterId FROM subscriptions
     `;
-    // const query = `
-    //     SELECT subscriptions.userId, subscriptions.newsletterId, users.username, newsletters.name AS newsletter
-    //     FROM subscriptions
-    //     JOIN users ON subscriptions.userId = users.id
-    //     JOIN newsletters ON subscriptions.newsletterId = newsletters.id
-    // `;
 
     db.all(query, [], (err, rows) => {
         if (err) {
