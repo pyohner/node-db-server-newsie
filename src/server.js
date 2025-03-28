@@ -7,7 +7,7 @@ const PORT = 3333;
 
 
 // Middleware
-app.use(cors()); // Allows cross-origin requests from your Angular app
+app.use(cors()); // Allows cross-origin requests from the Angular app
 app.use(express.json()); // Parses JSON request bodies
 
 // Import routes
@@ -20,7 +20,10 @@ app.use("/api/users", usersRoutes);
 const subscriptionsRoutes = require("./routes/subscriptions");
 app.use("/api/subscriptions", subscriptionsRoutes);
 
-// Basic test route
+const loginRoutes = require("./routes/login");
+app.use("/api/login", loginRoutes);
+
+// Test route
 app.get("/", (req, res) => {
     res.send("Newsie API is running!");
 });
